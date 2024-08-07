@@ -11,7 +11,7 @@ export default defineConfig({
     format: "es",
     name: "react-to-ui",
   },
-  external: ["react", "next/link"],
+  external: ["react","react-dom","next/link"],
   plugins: [
     typescript({ tsconfig: "tsconfig.json" }),
     postcss({

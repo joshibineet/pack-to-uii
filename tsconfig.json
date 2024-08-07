@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "moduleResolution": "node",
     "jsx": "react",
+    "target": "ES2020",
+    "module": "ESNext",
+    "declaration": true,
     "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "declarationDir": "dist",
+    "moduleResolution": "node",
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
