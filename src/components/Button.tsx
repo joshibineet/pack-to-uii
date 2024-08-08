@@ -1,7 +1,7 @@
-import * as React from 'react'
-import Link from 'next/link';
-import { MouseEventHandler } from 'react';
-import { Spinner }  from '../components/Spinner.js';
+import Link from "next/link";
+import * as React from "react";
+import { MouseEventHandler } from "react";
+import { Spinner } from "../components/Spinner.js";
 
 export interface ButtonProps {
   text?: string;
@@ -10,48 +10,48 @@ export interface ButtonProps {
   textClassName?: string;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
-  buttonType?: 'bordered' | 'flat';
-  type?: 'button' | 'submit' | 'reset' | 'link';
-  kind?: 'default' | 'success' | 'danger' | 'warning' | 'secondary';
+  buttonType?: "bordered" | "flat";
+  type?: "button" | "submit" | "reset" | "link";
+  kind?: "default" | "success" | "danger" | "warning" | "secondary";
   onClick?: MouseEventHandler<HTMLButtonElement>;
   href?: string;
   tooltip?: string;
 }
 
-const Button = ({ buttonType = 'flat', kind, ...props }: ButtonProps) => {
-  var color = 'bg-accentBlue-500 text-white';
+const Button = ({ buttonType = "flat", kind, ...props }: ButtonProps) => {
+  var color = "bg-accentBlue-500 text-white";
 
-  if (buttonType == 'bordered') {
-    color = 'bg-transparent text-dark-500 ';
+  if (buttonType == "bordered") {
+    color = "bg-transparent text-dark-500 ";
   } else {
     switch (kind) {
-      case 'default':
-        color = 'bg-accentBlue-400 text-white';
+      case "default":
+        color = "bg-accentBlue-400 text-white";
         break;
-      case 'secondary':
-        color = 'bg-dark-500 text-white';
+      case "secondary":
+        color = "bg-dark-500 text-white";
         break;
-      case 'success':
-        color = 'bg-green-400 text-white';
+      case "success":
+        color = "bg-green-400 text-white";
         break;
-      case 'danger':
-        color = 'bg-red-200 text-red-500';
+      case "danger":
+        color = "bg-red-200 text-red-500";
         break;
-      case 'warning':
-        color = 'bg-yellow-200 text-yellow-500';
+      case "warning":
+        color = "bg-yellow-200 text-yellow-500";
         break;
       default:
         break;
     }
   }
 
-  if (props.type == 'link') {
+  if (props.type == "link") {
     return (
       <Link
         title={props.tooltip}
         className={
           `${
-            buttonType == 'bordered' ? 'border' : ''
+            buttonType == "bordered" ? "border" : ""
           } ${color} rounded-md h-12 text-sm font-normal flex justify-center items-center hover:opacity-95 px-3 whitespace-nowrap ` +
           props.className
         }
@@ -74,10 +74,10 @@ const Button = ({ buttonType = 'flat', kind, ...props }: ButtonProps) => {
     <button
       onClick={props.onClick}
       title={props.tooltip}
-      type={props.type ?? 'button'}
+      type={props.type ?? "button"}
       className={
         `${
-          buttonType == 'bordered' ? 'border' : ''
+          buttonType == "bordered" ? "border" : ""
         } ${color} rounded-md h-12 text-sm font-normal flex justify-center items-center hover:opacity-95 px-3 whitespace-nowrap ` +
         props.className
       }
@@ -95,4 +95,4 @@ const Button = ({ buttonType = 'flat', kind, ...props }: ButtonProps) => {
   );
 };
 
-export { Button }   ;
+export { Button };

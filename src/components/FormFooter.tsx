@@ -6,7 +6,7 @@ interface FormFooterProps {
 
 const FormFooter = ({ children }: FormFooterProps) => {
   return (
-    <div className="flex justify-end gap-2 m-4">
+    <div className="flex justify-end gap-4 m-2">
       {children}
     </div>
   );
